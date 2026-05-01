@@ -1,0 +1,22 @@
+Andrew Thach - Phase 5 Contribution
+
+I worked on experiments, plots, the README and reproducibility documentation,
+and demo support.
+
+Specifically, I built:
+
+- The loss injection helper that drops or corrupts segments at a configured
+  probability, used in Options 1, 4, 5 and the Chart 1 sweep.
+- The experiments.py script that runs the Chart 1 sweep across loss rates
+  0% to 95% in 5% steps, averaging multiple runs per rate.
+- The make_plots.py script that produces all three required charts:
+    - Chart 1 (completion time vs packet loss rate)
+    - Chart 2 (cwnd vs transmission round)
+    - Chart 3 (Phase 1 to Phase 5 completion-time comparison)
+- Per-run wall-clock cap so high-loss runs cannot hang the experiment script.
+- The README with run instructions for each option, debugging tips
+  (--verbose, --seed), and reproducibility steps for the charts.
+- The demo script that walks through all five required scenarios in order.
+- Validation runs across all five options to confirm byte-for-byte correctness
+  of the received output.
+- Demo video preparation and recording support.

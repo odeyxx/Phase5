@@ -1,0 +1,6 @@
+phase,run,loss_rate,completion_time_seconds
+Phase 1,1,10,0.085
+Phase 2,1,10,0.082
+Phase 3,1,10,0.082
+Phase 4,1,10,0.085
+Phase 5,1,10,0.002

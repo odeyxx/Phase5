@@ -1,0 +1,21 @@
+Kevin Pol - Phase 5 Contribution
+
+I worked on the receiver side of the TCP-like protocol, the flow control logic,
+and in-order reassembly.
+
+Specifically, I built:
+
+- The receiver's three-way handshake response (receive SYN, send SYN-ACK with
+  initial rwnd, accept final ACK).
+- Checksum validation and segment parsing on the receive path.
+- Cumulative ACK generation that advertises the current rwnd in every ACK.
+- The receiver buffer model that tracks free space and supports flow control.
+- The Option 2 demo configuration where rwnd is capped at 2 segments and the
+  application drains slowly to show the sender pausing and resuming.
+- In-order reassembly with out-of-order buffering, so a single fast retransmit
+  can fill the gap without forcing a Go-Back-N style cascade of retransmissions.
+- FIN handling and the final ACK that closes the connection.
+- The output file write that proves byte-for-byte correctness against the input.
+
+I also helped fix the bug where the receiver was sending two ACKs per accepted
+DATA segment, which was being misread by the sender as duplicate ACKs.

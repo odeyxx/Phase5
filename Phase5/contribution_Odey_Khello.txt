@@ -1,0 +1,20 @@
+Odey Khello - Phase 5 Contribution
+
+I worked on the sender side of the TCP-like protocol and the congestion control logic.
+
+Specifically, I built:
+
+- The sender's three-way handshake (SYN, wait for SYN-ACK, send final ACK).
+- The send loop that respects min(cwnd, rwnd) and tracks unacknowledged segments.
+- Cumulative ACK processing on the sender side.
+- The retransmission timer and timeout handling.
+- The full TCP Reno congestion control module: slow start, congestion avoidance,
+  triple duplicate ACK detection, fast retransmit, fast recovery, and timeout
+  response (cwnd reset to 1, ssthresh = cwnd / 2).
+- Sender-side FIN teardown.
+- The cwnd CSV log used to generate Chart 2.
+- Integration testing across all five demo scenarios.
+
+I also helped debug the window-update edge case where the receiver sending a
+larger rwnd with the same ack number was being misread as a duplicate ACK and
+triggering false fast retransmits during Option 2.
