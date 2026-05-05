@@ -1,0 +1,20 @@
+===== Phase 5 BMP Run 1 =====
+completion_time_seconds=3.603527
+PASS: files match byte-for-byte
+demo_option=1, time=3.603527s
+===== Phase 5 BMP Run 2 =====
+completion_time_seconds=2.575266
+PASS: files match byte-for-byte
+demo_option=1, time=2.575266s
+===== Phase 5 BMP Run 3 =====
+completion_time_seconds=4.640415
+PASS: files match byte-for-byte
+demo_option=1, time=4.640415s
+===== Phase 5 BMP Run 4 =====
+completion_time_seconds=4.659432
+PASS: files match byte-for-byte
+demo_option=1, time=4.659432s
+===== Phase 5 BMP Run 5 =====
+completion_time_seconds=10.751334
+PASS: files match byte-for-byte
+demo_option=1, time=10.751334s
